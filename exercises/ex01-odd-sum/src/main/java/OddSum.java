@@ -26,6 +26,13 @@ public class OddSum {
      * @return the sum of all integers at odd indices in arr
      */
     public static int oddSum(int[] arr) {
+        int s = 0;
+        if (arr.length >= 2){
+            for (int i = 1; i < arr.length; i += 2){
+                s += arr[i];
+            }
+            return s;
+        }
         // TODO: Replace the line below. Use a for-loop that starts at index 1
         //       and steps by 2 (i += 2), adding arr[i] to a running total.
         //       Recall arr.length gives the number of elements.

@@ -18,6 +18,7 @@ public class Box<T> {
    * @param item the value to store
    */
   public void set(T item) {
+    this.item =item;
     // TODO: store item in this box's field (mind the shadowing — use `this`).
   }
 
@@ -27,8 +28,7 @@ public class Box<T> {
    * @return the stored value
    */
   public T get() {
-    // TODO
-    return null;
+    return item;
   }
 
   /**
@@ -37,8 +37,8 @@ public class Box<T> {
    * @return true iff no item has been stored
    */
   public boolean isEmpty() {
-    // TODO
-    return false;
+    return item == null;
+
   }
 
   /**
@@ -53,6 +53,11 @@ public class Box<T> {
    */
   public static <T extends Comparable<T>> T max(T a, T b) {
     // TODO: use a.compareTo(b) to decide which to return.
+    if (a.compareTo(b) > 0) {
+      return a;
+    } else if (a.compareTo(b) < 0){
+      return b;
+    }
     return a;
   }
 }
