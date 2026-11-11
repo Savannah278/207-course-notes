@@ -103,13 +103,22 @@ public class NumberTriangle {
    * @return the root value at the location indicated by path
    */
   public int retrieve(String path) {
+    NumberTriangle current = this;
+    for (int i = 0; i < path.length(); i++){
+      if (path.charAt(i) == "l"){
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+    return current.root;
     // TODO: walk the path one character at a time, starting from this object.
     //       For each character, move to the left child (if it is 'l') or the
     //       right child (if it is 'r'). When the path runs out, return the root
     //       value of wherever you ended up. An empty path means "stay here".
     //       Hint: String#charAt(int) and String#length() are all you need for the
     //       iterative version; a recursive version can use String#substring(1).
-    return 0;
+
   }
 
   /**
